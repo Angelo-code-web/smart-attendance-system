@@ -1,0 +1,241 @@
+
+.attendance-module {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Panels */
+.attendance-module .panel {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(25, 45, 80, 0.04);
+}
+
+.attendance-module .panel h2 {
+  margin: 0 0 20px;
+  color: #172554;
+  font-size: 21px;
+}
+
+/* Date selection */
+.attendance-date {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.attendance-date label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.attendance-date input {
+  height: 43px;
+  padding: 0 13px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  color: #334155;
+  background: #fff;
+}
+
+.attendance-date input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Statistics cards */
+.attendance-module .cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.attendance-module .card {
+  padding: 23px;
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(25, 45, 80, 0.04);
+}
+
+.attendance-module .card p {
+  margin: 0 0 10px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.attendance-module .card h2 {
+  margin: 0;
+  color: #172554;
+  font-size: 28px;
+}
+
+/* Attendance table */
+.attendance-module .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.attendance-module table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.attendance-module th {
+  padding: 15px 14px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.attendance-module td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #edf1f6;
+  color: #475569;
+  font-size: 13px;
+}
+
+.attendance-module tbody tr:hover {
+  background: #f8fbff;
+}
+
+/* Attendance status */
+.attendance-module select {
+  min-width: 145px;
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #334155;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.attendance-module select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Save button */
+.attendance-module button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 12px 23px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.attendance-module button:hover {
+  background: #1d4ed8;
+}
+
+.attendance-module button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.attendance-module .error-message,
+.attendance-module .success-message {
+  padding: 13px 16px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.attendance-module .error-message {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.attendance-module .success-message {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .attendance-module .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .attendance-module .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .attendance-module .panel {
+    padding: 18px;
+  }
+
+  .attendance-module table {
+    min-width: 600px;
+  }
+
+  .attendance-date {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Colored attendance indicators */
+.attendance-module .attendance-status-select {
+  min-width: 145px;
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Present - Green */
+.attendance-module .attendance-status-select.present {
+  border-color: #a7f3d0;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+/* Absent - Red */
+.attendance-module .attendance-status-select.absent {
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* Unmarked - Grey */
+.attendance-module .attendance-status-select.unmarked {
+  border-color: #e2e8f0;
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.attendance-module .attendance-status-select:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
